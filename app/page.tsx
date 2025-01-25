@@ -6,11 +6,10 @@ export default function Home() {
         <>
             <Header />
 
-            <main className="bg-black min-h-screen w-screen">
-
+            <main className="bg-black min-h-screen w-screen grid place-content-center">
             </main>
         
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }

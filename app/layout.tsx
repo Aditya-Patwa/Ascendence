@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Urbanist } from "next/font/google";
+import { Urbanist, Host_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const urbanist = Urbanist({
+export const urbanist = Urbanist({
   subsets: ["latin"],
 });
+
+export const host_grotesk = Host_Grotesk({
+  subsets: ["latin"]
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${urbanist.className} w-screen overflow-x-hidden`}
+        className={`${host_grotesk.className} w-screen overflow-x-hidden`}
       >
         {children}
       </body>
