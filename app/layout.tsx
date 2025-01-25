@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import { Urbanist, Host_Grotesk } from "next/font/google";
 import "./globals.css";
+import { host_grotesk } from "@/components/fonts";
 
-export const urbanist = Urbanist({
-  subsets: ["latin"],
-});
 
-export const host_grotesk = Host_Grotesk({
-  subsets: ["latin"]
-})
 
 export const metadata: Metadata = {
   title: "Create Next App",
