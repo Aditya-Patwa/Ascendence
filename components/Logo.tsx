@@ -4,15 +4,15 @@ export default function Logo() {
     return (
         <div className="flex items-center gap-1">
             <div className="relative rotate-45">
-                <h1 className={`${urbanist.className} font-bolder text-3xl lg:text-4xl text-indigo-600`}>
+                <h1 className={`${urbanist.className} text-indigo-600`}>
                     a
                 </h1>
-                <h1 className={`${urbanist.className} font-bolder text-3xl lg:text-4xl text-indigo-600 absolute scale-x-[-1] top-0 -left-[1px]`}>
+                <h1 className={`${urbanist.className} text-indigo-600 absolute scale-x-[-1] top-0 -left-[1px]`}>
                     a
                 </h1>
             </div>
             <div>
-                <h1 className={`${urbanist.className} font-bolder text-3xl lg:text-4xl text-black dark:text-white`}>
+                <h1 className={`${urbanist.className}`}>
                     ascendence
                 </h1>
             </div>

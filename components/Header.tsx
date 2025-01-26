@@ -14,7 +14,7 @@ export default function Header() {
         <>
             <header className={`w-screen px-6 py-6 lg:py-8 lg:px-8 flex justify-between items-center bg-white dark:bg-black gap-8`}>
                 <div>
-                    <Link href={"/"} className={`${urbanist.className} text-black dark:text-white font-bold bg-clip-text items-center flex gap-0`}>
+                    <Link href={"/"} className={`${urbanist.className} text-black dark:text-white font-bold bg-clip-text items-center flex gap-0 font-bolder text-3xl lg:text-4xl`}>
                         <Logo />
                     </Link>
                 </div>
