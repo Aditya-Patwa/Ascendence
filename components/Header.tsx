@@ -88,7 +88,7 @@ export default function Header() {
 
                 <div className="flex md:hidden gap-2 items-center">
                     <ModeToggle />
-                    <button className="h-10 w-10 grid place-content-center bg-light dark:bg-black border border-zinc-200 dark:border-zinc-600 text-black dark:text-white rounded-xl font-bold relative overflow-hidden">
+                    <button className="h-10 w-10 grid place-content-center bg-light dark:bg-black border border-zinc-200 dark:border-zinc-600 text-black dark:text-white rounded-xl font-bold relative overflow-hidden" onClick={() => setToggle(!toggle)}>
                         <div
                             className="pointer-events-none absolute -inset-px opacity-0 transition duration-500"
                             style={{
@@ -102,16 +102,36 @@ export default function Header() {
             </header>
 
             {toggle && (
-                <nav className="px-4">
-                    <div className="py-4 bg-black rounded-xl border border-zinc-800 grid gap-2">
+                <nav className="px-4 absolute w-screen z-20">
+                    <div className="py-2 pt-4 bg-white/90 dark:bg-black/80 rounded-xl border border-zinc-300 dark:border-zinc-800 grid gap-2 backdrop-blur-lg">
                         <div className="text-center">
                             <Link href={"/"} className="font-bold text-lg">
-                                Home
+                                Products
                             </Link>
                         </div>
                         <div className="text-center">
                             <Link href={"/"} className="font-bold text-lg">
-                                Home
+                                About
+                            </Link>
+                        </div>
+                        <div className="text-center">
+                            <Link href={"/"} className="font-bold text-lg">
+                                Pricing
+                            </Link>
+                        </div>
+                        <div className="text-center">
+                            <Link href={"/"} className="font-bold text-lg">
+                                FAQs
+                            </Link>
+                        </div>
+                        <div className="text-center">
+                            <Link href={"/"} className="font-bold text-lg">
+                                Feedback
+                            </Link>
+                        </div>
+                        <div className="text-center mt-2 flex px-2">
+                            <Link href={"/"} className="bg-transparent border border-zinc-300 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-lg text-base lg:text-xl font-bold relative overflow-hidden w-full backdrop-blur">
+                                Get Started
                             </Link>
                         </div>
                     </div>
