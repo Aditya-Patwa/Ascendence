@@ -3,7 +3,9 @@ import Link from "next/link";
 import { urbanist } from "@/components/fonts";
 import { useState } from "react";
 import { ModeToggle } from "./ModeToggle";
+import { AnimatePresence, motion } from "motion/react";
 import Logo from "./Logo";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
     const [toggle, setToggle] = useState(false);
@@ -14,44 +16,10 @@ export default function Header() {
                 <div>
                     <Link href={"/"} className={`${urbanist.className} text-black dark:text-white font-bold bg-clip-text items-center flex gap-0`}>
                         <Logo />
-                        {/* <Image src={"/ascendence-logo.svg"} alt="logo" width={64} height={64} /> */}
-                        {/* ascendence  */}
                     </Link>
                 </div>
 
-                {/* <div className="hidden md:flex lg:hidden justify-between items-center gap-4">
-                <Link href={"/"} className="text-zinc-300 text-base bg-black hover:text-white">
-                    Our Services
-                </Link>
-                <Link href={"/"} className="text-zinc-300 text-base bg-black hover:text-white">
-                    About
-                </Link>
-                <Link href={"/"} className="text-zinc-300 text-base bg-black hover:text-white">
-                    Pricing
-                </Link>
-                <Link href={"/"} className="text-zinc-300 text-base bg-black hover:text-white">
-                    FAQs
-                </Link>
-                <Link href={"/"} className="text-zinc-300 text-base bg-black hover:text-white">
-                    Feedback
-                </Link>
-
-                <Link href={"/"} className="bg-black border border-zinc-600 text-white px-4 py-2 rounded-xl text-sm font-bold relative overflow-hidden">
-                    <div
-                        className="pointer-events-none absolute -inset-px opacity-0 transition duration-500"
-                        style={{
-                            opacity: 1,
-                            background: `radial-gradient(600px circle at 50% -50%, rgba(255,255,255,.15), transparent 40%)`,
-                        }}
-                    />
-                    Get Started
-                </Link>
-            </div> */}
-
                 <div className="hidden md:flex justify-around items-center gap-3 lg:gap-6">
-                    {/* <Link href={"/"} className="text-zinc-300 text-lg bg-black hover:text-white">
-                    Home
-                </Link> */}
                     <Link href={"/"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-lg lg:text-2xl dark:hover:text-white">
                         Products
                     </Link>
@@ -95,48 +63,53 @@ export default function Header() {
                                 background: `radial-gradient(200px circle at 50% -50%, rgba(255,255,255,.15), transparent 40%)`,
                             }}
                         />
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /></svg>
+                        {toggle ? (
+                            <X size={24} />
+                        ) : (
+                            <Menu size={24} />
+                        )}
                     </button>
                 </div>
             </header>
 
-            {toggle && (
-                <nav className="px-4 absolute w-screen z-20">
-                    <div className="py-2 pt-4 bg-white/90 dark:bg-black/80 rounded-xl border border-zinc-300 dark:border-zinc-800 grid gap-2 backdrop-blur-lg">
-                        <div className="text-center">
-                            <Link href={"/"} className="font-bold text-lg">
-                                Products
-                            </Link>
+            <AnimatePresence>
+                {toggle && (
+                    <motion.nav initial={{opacity: 0, y: -10}} animate={{opacity: 1, y: 0}} exit={{opacity: 0, y: -10}} className="px-4 absolute w-screen z-20">
+                        <div className="py-2 pt-4 bg-white dark:bg-black rounded-xl border border-zinc-300 dark:border-zinc-800 grid gap-2">
+                            <div className="text-center">
+                                <Link href={"/"} className="font-bold text-lg">
+                                    Products
+                                </Link>
+                            </div>
+                            <div className="text-center">
+                                <Link href={"/"} className="font-bold text-lg">
+                                    About
+                                </Link>
+                            </div>
+                            <div className="text-center">
+                                <Link href={"/"} className="font-bold text-lg">
+                                    Pricing
+                                </Link>
+                            </div>
+                            <div className="text-center">
+                                <Link href={"/"} className="font-bold text-lg">
+                                    FAQs
+                                </Link>
+                            </div>
+                            <div className="text-center">
+                                <Link href={"/"} className="font-bold text-lg">
+                                    Feedback
+                                </Link>
+                            </div>
+                            <div className="text-center mt-2 flex px-2">
+                                <Link href={"/"} className="bg-transparent border border-zinc-300 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-lg text-base lg:text-xl font-bold relative overflow-hidden w-full backdrop-blur">
+                                    Get Started
+                                </Link>
+                            </div>
                         </div>
-                        <div className="text-center">
-                            <Link href={"/"} className="font-bold text-lg">
-                                About
-                            </Link>
-                        </div>
-                        <div className="text-center">
-                            <Link href={"/"} className="font-bold text-lg">
-                                Pricing
-                            </Link>
-                        </div>
-                        <div className="text-center">
-                            <Link href={"/"} className="font-bold text-lg">
-                                FAQs
-                            </Link>
-                        </div>
-                        <div className="text-center">
-                            <Link href={"/"} className="font-bold text-lg">
-                                Feedback
-                            </Link>
-                        </div>
-                        <div className="text-center mt-2 flex px-2">
-                            <Link href={"/"} className="bg-transparent border border-zinc-300 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-lg text-base lg:text-xl font-bold relative overflow-hidden w-full backdrop-blur">
-                                Get Started
-                            </Link>
-                        </div>
-                    </div>
-                </nav>
-            )}
-
+                    </motion.nav>
+                )}
+            </AnimatePresence>
         </>
     )
 }
