@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { urbanist } from "@/components/fonts";
 import { useState } from "react";
-import Image from "next/image";
 import { ModeToggle } from "./ModeToggle";
 import Logo from "./Logo";
 
