@@ -62,7 +62,7 @@ function Plan({ children }: { children: React.ReactNode }) {
 
 function SubscriptionPlans({isYearly}: {isYearly: boolean}) {
     return (
-        <div className="grid gird-cols-1 md:grid-cols-3 gap-4 mt-16 sm:px-8 lg:px-16 max-w-7xl w-full justify-self-center">
+        <div className="grid gird-cols-1 lg:grid-cols-3 gap-4 mt-16 sm:px-8 lg:px-16 max-w-3xl lg:max-w-7xl w-full justify-self-center">
             <Plan>
                 <div className="px-8 py-8 bg-zinc-50 dark:bg-zinc-900 h-full">
                     <div>

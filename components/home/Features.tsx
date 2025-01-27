@@ -68,7 +68,7 @@ export default function Features() {
                 </div>
             </div>
 
-            <div className="grid gird-cols-1 md:grid-cols-3 gap-4 mt-16 sm:px-8 lg:px-16 max-w-7xl justify-self-center">
+            <div className="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-16 sm:px-8 lg:px-16 max-w-7xl justify-self-center">
                 {features.map((feature, i) => 
                     <Card key={i} icon={feature.icon} title={feature.headline} description={feature.content} />
                 )}
