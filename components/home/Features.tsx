@@ -16,7 +16,7 @@ const features = [
   {
     "headline": "Automated Savings Tools",
     "content": "Save Without Thinking - Set a minimum amount to save or invest regularly and watch your wealth grow effortlessly.",
-    "icon": <PiggyBank className="h-16 w-16 text-yellow-500" />
+    "icon": <PiggyBank className="h-16 w-16 text-emerald-500" />
   },
   {
     "headline": "Personalized Financial Recommendations",
@@ -46,7 +46,7 @@ const features = [
   {
     "headline": "Incentives for Financial Success",
     "content": "Earn as You Save - Achieve goals, manage money wisely, and earn crypto, tokens, or NFTs as rewards.",
-    "icon": <BadgeDollarSign className="h-16 w-16 text-emerald-500" />
+    "icon": <BadgeDollarSign className="h-16 w-16 text-yellow-500" />
   }
 ];
 
