@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Hero() {
     return (
         <main className="w-screen overflow-x-hidden">
-            <div className="w-screen grid py-12 md:py-8 px-4 lg:px-8 relative">
+            <div className="w-screen grid justify-center py-12 md:py-8 px-4 lg:px-8 relative">
                 <div className="max-w-7xl">
                     <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-none tracking-tight font-extrabold">
                         Empowering you to <span className="bg-clip-text text-transparent bg-gradient-to-tr from-blue-500 via-fuchsia-500 to-pink-500 font-black">ascend</span> beyond financial limits.

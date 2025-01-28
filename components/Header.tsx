@@ -38,7 +38,7 @@ export default function Header() {
                 </div>
 
                 <div className="hidden md:flex gap-1 items-center">
-                    <Link href={"/"} className="bg-transparent border border-zinc-500 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-xl text-base lg:text-xl font-bold relative overflow-hidden">
+                    <Link href={"/get-started"} className="bg-transparent border border-zinc-500 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-xl text-base lg:text-xl font-bold relative overflow-hidden">
                         <div
                             className="pointer-events-none absolute -inset-px opacity-0 transition duration-500"
                             style={{
@@ -47,7 +47,6 @@ export default function Header() {
                             }}
                         />
                         Get Started
-
                         {/* <div className="absolute bottom-0 right-[-20%] top-[10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,157,255,0.5),rgba(255,255,255,0))] z-20"></div> */}
                     </Link>
                     <ModeToggle />
@@ -74,7 +73,7 @@ export default function Header() {
 
             <AnimatePresence>
                 {toggle && (
-                    <motion.nav initial={{opacity: 0, y: -10}} animate={{opacity: 1, y: 0}} exit={{opacity: 0, y: -10}} className="px-4 absolute w-screen z-20">
+                    <motion.nav initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="px-4 absolute w-screen z-20">
                         <div className="py-2 pt-4 bg-white dark:bg-black rounded-xl border border-zinc-300 dark:border-zinc-800 grid gap-2">
                             <div className="text-center">
                                 <Link href={"/"} className="font-bold text-lg">
@@ -102,7 +101,14 @@ export default function Header() {
                                 </Link>
                             </div>
                             <div className="text-center mt-2 flex px-2">
-                                <Link href={"/"} className="bg-transparent border border-zinc-300 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-lg text-base lg:text-xl font-bold relative overflow-hidden w-full backdrop-blur">
+                                <Link href={"/get-started"} className="bg-transparent border border-zinc-300 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-lg text-base lg:text-xl font-bold relative overflow-hidden w-full backdrop-blur">
+                                    <div
+                                        className="pointer-events-none absolute -inset-px opacity-0 transition duration-500"
+                                        style={{
+                                            opacity: 1,
+                                            background: `radial-gradient(600px circle at 50% -50%, rgba(255,255,255,.15), transparent 40%)`,
+                                        }}
+                                    />
                                     Get Started
                                 </Link>
                             </div>
