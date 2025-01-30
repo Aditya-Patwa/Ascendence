@@ -1,6 +1,8 @@
 "use client";
 import { useState, useRef } from "react";
 import Logo from "../Logo";
+import { AnimatePresence, motion } from "motion/react";
+import { Bell } from "lucide-react";
 
 
 export function MobileCard() {
@@ -44,7 +46,7 @@ export function MobileCard() {
             onBlur={handleBlur}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="cursor-pointer relative overflow-hidden bg-zinc-950 rounded-3xl transition-ease duration-500 relative group border border-zinc-700"
+            className="cursor-pointer relative overflow-hidden bg-zinc-950 rounded-3xl transition-ease duration-500 relative group border border-zinc-700 grid"
         >
             <div
                 className="pointer-events-none absolute -inset-px opacity-0 transition duration-500 z-70"
@@ -60,7 +62,7 @@ export function MobileCard() {
                 </h1>
             </div>
 
-            <div className="bg-transparent rounded-3xl shadow-xl relative overflow-hidden absolute aspect-[4/3]">
+            <div className="bg-transparent rounded-3xl shadow-xl relative overflow-hidden absolute aspect-[4/3] self-end">
                 <div className="absolute w-full h-full grid place-content-center -bottom-1/2">
                     <div className="p-8 bg-zinc-900/40 rounded-full border border-zinc-900 shadow-xl group-hover:shadow-emerald-900 transition-ease duration-300">
                         <div className="p-8 bg-zinc-900/60 rounded-full border border-zinc-800 shadow-xl group-hover:shadow-emerald-800 transition-ease duration-300">
@@ -165,9 +167,9 @@ export function CreditCard() {
 
 
             <div className="bg-transparent rounded-3xl shadow-xl relative overflow-hidden w-full h-full opacity-50 group-hover:opacity-100 transition-ease duration-300">
-
+                <div className="w-full h-full absolute bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]" />
                 <div className="w-full h-full grid z-30 transition-ease group-hover:rotate-0 duration-500 z-20">
-                    <div className="absolute w-[80%] lg:w-[60%] aspect-video rounded-3xl justify-self-center mt-16 bg-zinc-900 border-4 border-zinc-800 grid grid-rows-4 overflow-hidden shadow-2xl group-hover:shadow-indigo-600/40 origin-left group-hover:-rotate-12 transition-ease duration-300">
+                    {/* <div className="absolute w-[80%] lg:w-[60%] aspect-video rounded-3xl justify-self-center mt-16 bg-zinc-900 border-4 border-zinc-800 grid grid-rows-4 overflow-hidden shadow-2xl group-hover:shadow-indigo-600/40 origin-left group-hover:-rotate-12 transition-ease duration-300">
                         <div className="p-4 text-white row-span-3 grid">
                             <div>
                                 <Logo />
@@ -192,7 +194,7 @@ export function CreditCard() {
                                 <span className="text-zinc-50 text-sm font-bold">09/29</span>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
 
 
@@ -281,7 +283,7 @@ export function CreditCard() {
 
 
 
-                    <div className="absolute w-[80%] lg:w-[60%] aspect-video rounded-3xl justify-self-center mt-16 bg-zinc-900 border-4 border-zinc-800 grid grid-rows-4 overflow-hidden shadow-2xl group-hover:shadow-indigo-600/40 origin-left group-hover:rotate-12 transition-ease duration-300">
+                    {/* <div className="absolute w-[80%] lg:w-[60%] aspect-video rounded-3xl justify-self-center mt-16 bg-zinc-900 border-4 border-zinc-800 grid grid-rows-4 overflow-hidden shadow-2xl group-hover:shadow-indigo-600/40 origin-left group-hover:rotate-12 transition-ease duration-300">
                         <div className="p-4 text-white row-span-3 grid">
                             <div>
                                 <Logo />
@@ -306,7 +308,7 @@ export function CreditCard() {
                                 <span className="text-zinc-50 text-sm font-bold">09/29</span>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
 
                 </div>
@@ -315,10 +317,83 @@ export function CreditCard() {
             </div>
 
 
-            <div className="absolute p-8 items-end z-50 bottom-0">
+            <div className="absolute p-8 items-end bottom-0">
                 <h1 className="text-xl lg:text-3xl text-white font-extrabold opacity-70 group-hover:opacity-100 transition-ease duration-200">
                     Manage cards, track payments, and never miss a bill with <span className="text-indigo-600">Ascendence</span>.
                 </h1>
+            </div>
+
+        </main>
+    )
+}
+
+
+export function ChatCard() {
+    const divRef = useRef<HTMLDivElement>(null);
+    const [isFocused, setIsFocused] = useState(false);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [opacity, setOpacity] = useState(0);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!divRef.current || isFocused) return;
+
+        const div = divRef.current;
+        const rect = div.getBoundingClientRect();
+
+        setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    };
+
+    const handleFocus = () => {
+        setIsFocused(true);
+        setOpacity(1);
+    };
+
+    const handleBlur = () => {
+        setIsFocused(false);
+        setOpacity(0);
+    };
+
+    const handleMouseEnter = () => {
+        setOpacity(1);
+    };
+
+    const handleMouseLeave = () => {
+        setOpacity(0);
+    };
+
+    return (
+        <main
+            ref={divRef}
+            onMouseMove={handleMouseMove}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="cursor-pointer relative overflow-hidden bg-zinc-950 rounded-3xl transition-ease duration-500 relative group border border-zinc-700 min-h-[400px]"
+        >
+            <div
+                className="pointer-events-none absolute -inset-px opacity-0 transition duration-500 z-70"
+                style={{
+                    opacity,
+                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255, 255, 255, 0.1), transparent 40%)`,
+                }}
+            />
+
+
+            <div className="bg-transparent rounded-3xl shadow-xl relative overflow-hidden absolute aspect-[4/3] self-start">
+                <div className="absolute w-full h-full grid">
+                    <AnimatePresence mode="wait">
+                        {opacity == 0 ? (
+                            <motion.div initial={{ opacity: 0, scale: .9 }} key={"bell"} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.15 }} className="w-20 h-20 rounded-full grid place-content-center justify-self-center self-center border border-zinc-700 shadow-2xl shadow-white/20 rotate-45">
+                                <Bell className="h-10 w-10 text-white" />
+                            </motion.div>
+                        ) : (
+                            <motion.div initial={{opacity: 0, scale: .9}} animate={{opacity: 1, scale: 1}} exit={{opacity: 0, scale: .9}} className="w-[70%] border-4 border-zinc-700 justify-self-center self-center" key={"messageBox"}>
+
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </div>
             </div>
 
         </main>
