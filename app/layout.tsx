@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport  } from "next";
 import "./globals.css";
 import { host_grotesk } from "@/components/fonts";
 import { ThemeProvider } from "@/components/theme-provider"
@@ -6,6 +6,10 @@ import { ThemeProvider } from "@/components/theme-provider"
 export const metadata: Metadata = {
   title: "Ascendence",
   description: "Empowering you to ascend beyond financial limits: Take control of your finances, achieve your goals, and experience limitless growth with ease.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#4f46e5"
 };
 
 export default function RootLayout({
