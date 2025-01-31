@@ -2,7 +2,7 @@
 import { useState, useRef } from "react";
 import Logo from "../Logo";
 import { AnimatePresence, motion } from "motion/react";
-import { Bell } from "lucide-react";
+import { Bell, CircleX } from "lucide-react";
 
 
 export function MobileCard() {
@@ -379,23 +379,55 @@ export function ChatCard() {
                 }}
             />
 
+            <div
+                className="absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#ffffff17_1px,transparent_1px),linear-gradient(to_bottom,#ffffff17_1px,transparent_1px)] bg-[size:24px_24px]"
+            ></div>
 
-            <div className="bg-transparent rounded-3xl shadow-xl relative overflow-hidden absolute aspect-[4/3] self-start">
-                <div className="absolute w-full h-full grid">
+
+            <div className="bg-transparent rounded-3xl h-[70%] shadow-xl relative overflow-hidden">
+                <div className="w-full h-full grid">
                     <AnimatePresence mode="wait">
                         {opacity == 0 ? (
                             <motion.div initial={{ opacity: 0, scale: .9 }} key={"bell"} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.15 }} className="w-20 h-20 rounded-full grid place-content-center justify-self-center self-center border border-zinc-700 shadow-2xl shadow-white/20 rotate-45">
                                 <Bell className="h-10 w-10 text-white" />
                             </motion.div>
                         ) : (
-                            <motion.div initial={{opacity: 0, scale: .9}} animate={{opacity: 1, scale: 1}} exit={{opacity: 0, scale: .9}} className="w-[70%] border-4 border-zinc-700 justify-self-center self-center" key={"messageBox"}>
+                            <motion.div initial={{ opacity: 0, scale: .9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: .9 }} className="w-[80%] md:w-[70%] border-4 border-zinc-800 bg-zinc-900 p-4 rounded-2xl justify-self-center self-center shadow-2xl shadow-yellow-700/20" key={"messageBox"}>
+                                <div className="">
+                                    <h1 className="text-lg font-bold text-white">
+                                        Today
+                                    </h1>
+                                </div>
 
+                                <div className="pt-4 grid gap-2">
+                                    <motion.div initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: .5, delay: .25 }} className="bg-teal-600 rounded-lg text-white p-2 px-3 flex justify-between items-center">
+                                        <h1 className="text-sm md:text-base font-semibold">
+                                            Pay upcoming electricity bill
+                                        </h1>
+                                        <span>
+                                            <CircleX className="h-4 w-4 text-white" />
+                                        </span>
+                                    </motion.div>
+                                    <motion.div initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: .5, delay: .75 }} className="bg-rose-600 rounded-lg text-white p-2 px-3 flex justify-between items-center">
+                                        <h1 className="text-sm md:text-base font-semibold">
+                                            Market seems to fall—stay alert
+                                        </h1>
+                                        <span>
+                                            <CircleX className="h-4 w-4 text-white" />
+                                        </span>
+                                    </motion.div>
+                                </div>
                             </motion.div>
                         )}
                     </AnimatePresence>
                 </div>
             </div>
 
+            <div className="p-8 absolute bottom-0">
+                <h1 className="text-xl lg:text-3xl text-white font-extrabold opacity-70 group-hover:opacity-100 transition-ease duration-200">
+                    Manage cards, track payments, and never miss a bill with <span className="text-yellow-600">Ascendence</span>.
+                </h1>
+            </div>
         </main>
     )
 }

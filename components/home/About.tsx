@@ -1,4 +1,4 @@
-import { MobileCard, CreditCard, ChatCard } from "./AboutCards";
+import { MobileCard, CreditCard } from "./AboutCards";
 
 
 export default function About() {
@@ -19,10 +19,6 @@ export default function About() {
                 <div className="mt-8 py-4 grid sm:grid-cols-2 gap-4">
                     <MobileCard />
                     <CreditCard />
-                    <ChatCard />
-                    <div className="py-16 bg-zinc-950 rounded-3xl shadow-xl">
-
-                    </div>
                 </div>
             </div>
         </section>
