@@ -18,11 +18,18 @@ export default function Hero() {
 
                 <div className="py-2 lg:mt-4">
                     <div className="flex">
-                        <Link href={"/"} className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white dark:text-black px-6 lg:px-8 py-2 bg-black dark:bg-white flex gap-2 items-center group">
-                            Get Started
+                        <Link href={"/"} className="bg-black border border-zinc-600 text-white px-6 text-nowrap py-2 rounded-xl text-base md:text-lg lg:text-xl font-bold relative overflow-hidden flex gap-2 justify-center items-center">
+                            <div
+                                className="pointer-events-none absolute -inset-px opacity-0 transition duration-500"
+                                style={{
+                                    opacity: 1,
+                                    background: `radial-gradient(600px circle at 50% -50%, rgba(255,255,255,.15), transparent 40%)`,
+                                }}
+                            />
+                            <div>Get Started</div>
                         </Link>
-                        <Link href={"/"} className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold px-4 py-2 flex gap-1 items-center group text-indigo-600">
-                            Learn More<span className="group-hover:translate-x-2 transition-ease duration-200"><ArrowRight strokeWidth="3" className="size-[16px] lg:size-[32px]" /></span>
+                        <Link href={"/"} className="text-base md:text-lg lg:text-xl font-bold px-4 py-2 flex gap-1 items-center group text-zinc-900 dark:text-zinc-100">
+                            Learn More<span className="group-hover:translate-x-2 transition-ease duration-200"><ArrowRight strokeWidth="3" className="size-[10px] lg:size-[16px]" /></span>
                         </Link>
                     </div>
                 </div>
@@ -36,7 +43,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            
+
         </main>
     )
 }

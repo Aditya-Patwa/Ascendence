@@ -75,7 +75,7 @@ export default function HowItWorks() {
                             </div>
                         )}
                     </div>
-                    <div className="rounded-3xl bg-black overflow-hidden aspect-video shadow-2xl flex items-center mt-8">
+                    <div className="rounded-3xl bg-black overflow-hidden aspect-video shadow-2xl flex items-center mt-4 md:mt-8">
                         <img src="AscendenceFrame.png" className="" />
                     </div>
 
