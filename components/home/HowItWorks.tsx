@@ -70,7 +70,7 @@ export default function HowItWorks() {
                 <div className="grid gap-4 mt-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {steps.map((step, i) =>
-                            <motion.div initial={{y: 10, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: .5, ease: "easeOut"}} className="bg-white p-4 rounded-xl cursor-pointer shadow-lg" key={i}>
+                            <motion.div initial={{y: 20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: .65, duration: .45, ease: "linear"}} className="bg-white p-4 rounded-xl cursor-pointer shadow-lg" key={i}>
                                 <div className="flex gap-2 items-center">
                                     <div className={`${step.bgColor} w-6 h-6 text-white rounded grid place-content-center`}>
                                         {i+1}
@@ -86,7 +86,7 @@ export default function HowItWorks() {
                             </motion.div>
                         )}
                     </div>
-                    <motion.div initial={{y: 10, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: .5, ease: "easeOut"}} className="rounded-3xl bg-black overflow-hidden aspect-video shadow-2xl flex items-center mt-4 md:mt-8">
+                    <motion.div initial={{y: 20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: .65, duration: .45, ease: "linear"}} className="rounded-3xl bg-black overflow-hidden aspect-video shadow-2xl flex items-center mt-4 md:mt-8">
                         <img src="AscendenceFrame.png" className="" />
                     </motion.div>
 

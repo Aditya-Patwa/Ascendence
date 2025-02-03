@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "motion/react";
 import { useState, useRef, ReactElement } from "react";
 
 
@@ -37,7 +38,8 @@ export default function Card({icon, title, description}: {icon: ReactElement, ti
 
 
     return (
-        <main
+        <motion.main
+            initial={{y: 20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: .65, duration: .45, ease: "linear"}}
             ref={divRef}
             onMouseMove={handleMouseMove}
             onFocus={handleFocus}
@@ -73,6 +75,6 @@ export default function Card({icon, title, description}: {icon: ReactElement, ti
                     </h3>
                 </div>
             </div>
-        </main>
+        </motion.main>
     )
 }

@@ -1,5 +1,7 @@
+"use client";
 import { BadgeDollarSign, BellRing, Bot, Goal, NotebookPen, PaintbrushVertical, PiggyBank, UsersRound, Wallet } from "lucide-react";
 import Card from "../Card";
+import { motion } from "motion/react";
 
 
 const features = [
@@ -55,7 +57,7 @@ const features = [
 export default function Features() {
     return (
         <main className="mt-12 px-4 py-8 relative">
-            <div className="grid justify-center gap-2">
+            <motion.div initial={{y: 20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: .65, duration: .45, ease: "linear"}} className="grid justify-center gap-2">
                 <div>
                     <h1 className="text-center text-5xl md:text-6xl font-extrabold">
                         Grow Money, Live Smarter
@@ -66,7 +68,7 @@ export default function Features() {
                         Track expenses, save effortlessly, and achieve your financial goals—all in one app.
                     </h3>
                 </div>
-            </div>
+            </motion.div>
 
             <div className="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-16 sm:px-8 lg:px-16 max-w-7xl justify-self-center">
                 {features.map((feature, i) => 
