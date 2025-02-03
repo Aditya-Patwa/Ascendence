@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import CustomToggle from "./CustomToggle";
 import Link from "next/link";
 import { CircleCheck } from "lucide-react";
+import { motion } from "motion/react";
 
 function Plan({ children }: { children: React.ReactNode }) {
     const divRef = useRef<HTMLDivElement>(null);
@@ -344,7 +345,7 @@ export default function Pricing() {
 
 
     return (
-        <section className="py-16 px-4 mt-8 relative">
+        <motion.section initial={{y: 20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: .65, duration: .45, ease: "linear"}} className="py-16 px-4 mt-8 relative">
             <div className="grid justify-center gap-2">
                 <h1 className="text-center text-5xl md:text-6xl font-extrabold">
                     Invest in Your <span className="underline decoration-dashed decoration-6 decoration-indigo-600 underline-offset-4">Financial</span> Future
@@ -366,6 +367,6 @@ export default function Pricing() {
             </div>
 
             <SubscriptionPlans isYearly={isYearly} />
-        </section>
+        </motion.section>
     )
 }
