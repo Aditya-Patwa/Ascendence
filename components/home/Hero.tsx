@@ -1,4 +1,6 @@
+"use client";
 import { ArrowRight } from "lucide-react";
+import {motion} from "motion/react";
 import Link from "next/link";
 
 export default function Hero() {
@@ -6,17 +8,17 @@ export default function Hero() {
         <main className="w-screen overflow-x-hidden">
             <div className="w-screen grid justify-center text-left py-12 md:py-8 px-4 lg:px-8 relative">
                 <div className="max-w-7xl">
-                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl text-left leading-none tracking-tight font-extrabold">
+                    <motion.h1 initial={{opacity: 0, y: 30}} whileInView={{opacity: 1, y: 0}} transition={{duration: .45, delay: .1}} className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl text-left leading-none tracking-tight font-extrabold">
                         Empowering you to <span className="bg-clip-text text-transparent bg-gradient-to-tr from-blue-500 via-fuchsia-500 to-pink-500 font-black">ascend</span> beyond financial limits.
-                    </h1>
+                    </motion.h1>
                 </div>
                 <div className="max-w-xl md:max-w-3xl lg:max-w-5xl my-4">
-                    <h3 className="text-xl md:text-3xl lg:text-4xl font-light text-zinc-700 dark:text-zinc-400">
+                    <motion.h3 initial={{opacity: 0, y: 30}} whileInView={{opacity: 1, y: 0}} transition={{duration: .45, delay: .45}} className="text-xl md:text-3xl lg:text-4xl font-light text-zinc-700 dark:text-zinc-400">
                         Take control of your finances, achieve your goals, and experience limitless growth with ease.
-                    </h3>
+                    </motion.h3>
                 </div>
 
-                <div className="py-2 lg:mt-4">
+                <motion.div initial={{opacity: 0, y: 30}} whileInView={{opacity: 1, y: 0}} transition={{duration: .45, delay: .75}}  className="py-2 lg:mt-4">
                     <div className="flex">
                         <Link href={"/"} className="bg-black border border-zinc-600 text-white px-6 text-nowrap py-2 rounded-xl text-base md:text-lg lg:text-xl font-bold relative overflow-hidden flex gap-2 justify-center items-center">
                             <div
@@ -32,7 +34,7 @@ export default function Hero() {
                             Learn More<span className="group-hover:translate-x-2 transition-ease duration-200"><ArrowRight strokeWidth="3" className="size-[10px] lg:size-[16px]" /></span>
                         </Link>
                     </div>
-                </div>
+                </motion.div>
 
                 <div className="absolute -right-1/2 -bottom-1/2 -md:right-1/3 h-[500px] w-[500px] md:h-[1000px] md:w-[1000px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(79,70,229,.2),rgba(255,255,255,0))] -z-10"></div>
             </div>
