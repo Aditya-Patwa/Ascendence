@@ -56,7 +56,7 @@ const features = [
 
 export default function Features() {
     return (
-        <main className="mt-12 px-4 py-8 relative">
+        <main className="mt-12 px-4 py-8 relative" id="products">
             <motion.div initial={{y: 20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: .65, duration: .45, ease: "linear"}} className="grid justify-center gap-2">
                 <div>
                     <h1 className="text-center text-5xl md:text-6xl font-extrabold">

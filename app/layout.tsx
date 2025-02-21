@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className=" scroll-smooth">
       <body
         className={`${host_grotesk.className} w-screen overflow-x-hidden bg-white dark:bg-black text-black dark:text-white`}
       >

@@ -4,7 +4,7 @@ import { MobileCard, CreditCard } from "./AboutCards";
 export default function About() {
     return (
         <section className="grid py-16 my-16 px-4">
-            <div className="max-w-7xl w-full justify-self-center md:px-16">
+            <div className="max-w-7xl w-full justify-self-center md:px-16" id="about">
                 <div>
                     <h1 className="text-5xl md:text-6xl lg:text-7xl text-left font-black leadine-none tracking-tight">
                         Financial Revolution

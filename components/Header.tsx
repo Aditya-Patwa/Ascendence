@@ -20,16 +20,16 @@ export default function Header() {
                 </div>
 
                 <div className="hidden md:flex justify-around items-center gap-3 lg:gap-6">
-                    <Link href={"/"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-lg lg:text-2xl dark:hover:text-white">
+                    <Link href={"#products"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-lg lg:text-2xl dark:hover:text-white">
                         Products
                     </Link>
-                    <Link href={"/"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-lg lg:text-2xl dark:hover:text-white">
+                    <Link href={"#about"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-lg lg:text-2xl dark:hover:text-white">
                         About
                     </Link>
-                    <Link href={"/"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-lg lg:text-2xl dark:hover:text-white">
+                    <Link href={"#pricing"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-lg lg:text-2xl dark:hover:text-white">
                         Pricing
                     </Link>
-                    <Link href={"/"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-lg lg:text-2xl dark:hover:text-white">
+                    <Link href={"#faqs"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-lg lg:text-2xl dark:hover:text-white">
                         FAQs
                     </Link>
                     <Link href={"/"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-lg lg:text-2xl dark:hover:text-white">
@@ -76,22 +76,22 @@ export default function Header() {
                     <motion.nav initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="px-4 absolute w-screen z-20">
                         <div className="py-2 pt-4 bg-white dark:bg-black rounded-xl border border-zinc-300 dark:border-zinc-800 grid gap-2">
                             <div className="text-center">
-                                <Link href={"/"} className="font-bold text-lg">
+                                <Link href={"#products"} className="font-bold text-lg">
                                     Products
                                 </Link>
                             </div>
                             <div className="text-center">
-                                <Link href={"/"} className="font-bold text-lg">
+                                <Link href={"#about"} className="font-bold text-lg">
                                     About
                                 </Link>
                             </div>
                             <div className="text-center">
-                                <Link href={"/"} className="font-bold text-lg">
+                                <Link href={"#pricing"} className="font-bold text-lg">
                                     Pricing
                                 </Link>
                             </div>
                             <div className="text-center">
-                                <Link href={"/"} className="font-bold text-lg">
+                                <Link href={"#faqs"} className="font-bold text-lg">
                                     FAQs
                                 </Link>
                             </div>
