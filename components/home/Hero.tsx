@@ -20,7 +20,7 @@ export default function Hero() {
 
                 <div  className="py-2 lg:mt-4">
                     <div className="flex">
-                        <Link href={"/"} className="bg-black border border-zinc-600 text-white px-6 text-nowrap py-2 rounded-xl text-base md:text-lg lg:text-xl font-bold relative overflow-hidden flex gap-2 justify-center items-center">
+                        <Link href={"/get-started"} className="bg-black border border-zinc-600 text-white px-6 text-nowrap py-2 rounded-xl text-base md:text-lg lg:text-xl font-bold relative overflow-hidden flex gap-2 justify-center items-center">
                             <div
                                 className="pointer-events-none absolute -inset-px opacity-0 transition duration-500"
                                 style={{
@@ -30,7 +30,7 @@ export default function Hero() {
                             />
                             <div>Get Started</div>
                         </Link>
-                        <Link href={"/"} className="text-base md:text-lg lg:text-xl font-bold px-4 py-2 flex gap-1 items-center group text-zinc-900 dark:text-zinc-100">
+                        <Link href={"#about"} className="text-base md:text-lg lg:text-xl font-bold px-4 py-2 flex gap-1 items-center group text-zinc-900 dark:text-zinc-100">
                             Learn More<span className="group-hover:translate-x-2 transition-ease duration-200"><ArrowRight strokeWidth="3" className="size-[10px] lg:size-[16px]" /></span>
                         </Link>
                     </div>
