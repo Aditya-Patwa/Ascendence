@@ -345,7 +345,7 @@ export default function Pricing() {
 
 
     return (
-        <motion.section initial={{y: 20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: .65, duration: .45, ease: "linear"}} className="py-16 px-4 mt-8 relative" id="pricing">
+        <motion.section initial={{y: 20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: .05, duration: .45, ease: "linear"}} className="py-16 px-4 mt-8 relative" id="pricing">
             <div className="grid justify-center gap-2">
                 <h1 className="text-center text-5xl md:text-6xl font-extrabold">
                     Invest in Your <span className="underline decoration-dashed decoration-6 decoration-indigo-600 underline-offset-4">Financial</span> Future
