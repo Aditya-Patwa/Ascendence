@@ -19,7 +19,7 @@ export const signInWithMagicLinkAction = async (formData: FormData) => {
         );
     }
 
-    const { data, error } = await supabase.auth.signInWithOtp({
+    const { error } = await supabase.auth.signInWithOtp({
         email: email,
         options: {
           // set this to false if you do not want the user to be automatically signed up
