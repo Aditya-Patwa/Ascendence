@@ -15,20 +15,20 @@ export default function GetStarted(props: {
     searchParams: Promise<Message>;
 }) {
     const [msg, setMsg] = useState<Message | null>(null);
-    const [isMsg, setIsMsg] = useState(false);
-
-    async function fetchMsg() {
-        const searchParams = await props.searchParams;
-        // console.log(searchParams);
-        if ("message" in searchParams || "success" in searchParams || "error" in searchParams) {
-            setMsg(searchParams);
-            setIsMsg(true);
-        }
-    }
+    // const [isMsg, setIsMsg] = useState(false);
 
     useEffect(() => {
+        async function fetchMsg() {
+            const searchParams = await props.searchParams;
+            // console.log(searchParams);
+            if ("message" in searchParams || "success" in searchParams || "error" in searchParams) {
+                setMsg(searchParams);
+                // setIsMsg(true);
+            }
+        }
+
         fetchMsg();
-    }, []);
+    }, [props.searchParams]);
 
     return (
         <section className="w-screen overflow-x-hidden min-h-screen grid relative px-4 py-24">
@@ -47,7 +47,7 @@ export default function GetStarted(props: {
                 </Link>
             </motion.div>
 
-            {isMsg && (
+            {msg && (
                 <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: .65 }} className="grid my-4 mb-8 text-sm font-semibold">
                     {"success" in msg! && (
                         <div className="max-w-sm w-full justify-self-center p-2 px-4 text-emerald-500 border rounded-xl border-emerald-500/50 bg-emerald-500/20">
@@ -67,7 +67,7 @@ export default function GetStarted(props: {
                 </motion.div>
             )}
 
-            <motion.div initial={{ y: 40, opacity: 0 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: .65 }} className="max-w-sm w-full justify-self-center">
+            <motion.div initial={{ y: 40, opacity: 0, filter: "blur(4px)" }} whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }} transition={{ duration: .65 }} className="max-w-sm w-full justify-self-center">
                 <div className="grid">
                     <h1 className="text-center text-lg md:text-xl font-extrabold">
                         Take Charge of Your Financial Future
