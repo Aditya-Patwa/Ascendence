@@ -4,29 +4,14 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { signInWithMagicLinkAction } from "../actions";
 import { useSearchParams } from 'next/navigation'
+import { Suspense } from "react";
 
-
-export default function GetStarted() { 
+function SearchParams() {
     const searchParams = useSearchParams();
 
     return (
-        <section className="w-screen overflow-x-hidden min-h-screen grid relative px-4 py-24">
-            {/* <div className="absolute w-[50vw] aspect-square top-0 right-0 rounded-full bg-indigo-600/80 -translate-y-1/3 translate-x-1/3 blur-[180px] z-20"></div>
-            <div className="absolute w-[50vw] aspect-square bottom-0 left-0 rounded-full bg-indigo-600/80 translate-y-1/3 -translate-x-1/3 blur-[180px] z-20"></div> */}
-            <motion.div initial={{ y: -20, opacity: 0 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: .45 }} className="absolute p-4 lg:px-16 z-30 max-w-6xl w-full justify-self-center">
-                <Link href={"/"} className="flex items-center gap-1 group">
-                    <div>
-                        <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-200 duration-200" />
-                    </div>
-                    <div>
-                        <h1 className="text-base font-semibold">
-                            Home
-                        </h1>
-                    </div>
-                </Link>
-            </motion.div>
-
-            {searchParams.size > 0 && (
+        <>
+        {searchParams.size > 0 && (
                 <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: .65 }} className="grid my-4 mb-8 text-sm font-semibold">
                     {searchParams.get("success") && (
                         <div className="max-w-sm w-full justify-self-center p-2 px-4 text-emerald-500 border rounded-xl border-emerald-500/50 bg-emerald-500/20">
@@ -45,6 +30,32 @@ export default function GetStarted() {
                     )}
                 </motion.div>
             )}
+        </>
+    )
+}
+
+export default function GetStarted() { 
+
+    return (
+        <section className="w-screen overflow-x-hidden min-h-screen grid relative px-4 py-24">
+            {/* <div className="absolute w-[50vw] aspect-square top-0 right-0 rounded-full bg-indigo-600/80 -translate-y-1/3 translate-x-1/3 blur-[180px] z-20"></div>
+            <div className="absolute w-[50vw] aspect-square bottom-0 left-0 rounded-full bg-indigo-600/80 translate-y-1/3 -translate-x-1/3 blur-[180px] z-20"></div> */}
+            <motion.div initial={{ y: -20, opacity: 0 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: .45 }} className="absolute p-4 lg:px-16 z-30 max-w-6xl w-full justify-self-center">
+                <Link href={"/"} className="flex items-center gap-1 group">
+                    <div>
+                        <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-200 duration-200" />
+                    </div>
+                    <div>
+                        <h1 className="text-base font-semibold">
+                            Home
+                        </h1>
+                    </div>
+                </Link>
+            </motion.div>
+
+            <Suspense>
+                <SearchParams />
+            </Suspense>
 
             <motion.div initial={{ y: 40, opacity: 0, filter: "blur(4px)" }} whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }} transition={{ duration: .65 }} className="max-w-sm w-full justify-self-center">
                 <div className="grid">
