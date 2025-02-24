@@ -12,19 +12,19 @@ function SearchParams() {
     return (
         <>
         {searchParams.size > 0 && (
-                <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: .65 }} className="grid my-4 mb-8 text-sm font-semibold">
+                <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: .65 }} className="mb-8 text-sm font-semibold">
                     {searchParams.get("success") && (
-                        <div className="max-w-sm w-full justify-self-center p-2 px-4 text-emerald-500 border rounded-xl border-emerald-500/50 bg-emerald-500/20">
+                        <div className="max-w-sm w-full justify-self-center py-2 px-4 text-emerald-500 border rounded-xl border-emerald-500/50 bg-emerald-500/20">
                             {searchParams.get("success")}
                         </div>
                     )}
                     {searchParams.get("error") && (
-                        <div className="max-w-sm w-full justify-self-center p-2 px-4 text-rose-500 border rounded-xl border-rose-500/50 bg-rose-500/20">
+                        <div className="max-w-sm w-full justify-self-center py-2 px-4 text-rose-500 border rounded-xl border-rose-500/50 bg-rose-500/20">
                             {searchParams.get("error")}
                         </div>
                     )}
                     {searchParams.get("message") && (
-                        <div className="max-w-sm w-full justify-self-center p-2 px-4 text-indigo-500 border rounded-xl border-indigo-500/50 bg-indigo-500/20">
+                        <div className="max-w-sm w-full justify-self-center py-2 px-4 text-indigo-500 border rounded-xl border-indigo-500/50 bg-indigo-500/20">
                             {searchParams.get("message")}
                         </div>
                     )}
