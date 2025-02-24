@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { signInWithMagicLinkAction } from "../actions";
 import { useSearchParams } from 'next/navigation'
-import { FormEvent, Suspense, useState } from "react";
+import { Suspense, useState } from "react";
 
 function SearchParams() {
     const searchParams = useSearchParams();
