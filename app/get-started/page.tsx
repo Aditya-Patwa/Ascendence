@@ -3,32 +3,11 @@ import { motion } from "motion/react";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { signInWithMagicLinkAction } from "../actions";
-import { useEffect, useState } from "react";
-
-export type Message =
-    | { success: string }
-    | { error: string }
-    | { message: string };
+import { useSearchParams } from 'next/navigation'
 
 
-export default function GetStarted(props: {
-    searchParams: Promise<Message>;
-}) {
-    const [msg, setMsg] = useState<Message | null>(null);
-    // const [isMsg, setIsMsg] = useState(false);
-
-    useEffect(() => {
-        async function fetchMsg() {
-            const searchParams = await props.searchParams;
-            // console.log(searchParams);
-            if ("message" in searchParams || "success" in searchParams || "error" in searchParams) {
-                setMsg(searchParams);
-                // setIsMsg(true);
-            }
-        }
-
-        fetchMsg();
-    }, [props.searchParams]);
+export default function GetStarted() { 
+    const searchParams = useSearchParams();
 
     return (
         <section className="w-screen overflow-x-hidden min-h-screen grid relative px-4 py-24">
@@ -47,21 +26,21 @@ export default function GetStarted(props: {
                 </Link>
             </motion.div>
 
-            {msg && (
+            {searchParams.size > 0 && (
                 <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: .65 }} className="grid my-4 mb-8 text-sm font-semibold">
-                    {"success" in msg! && (
+                    {searchParams.get("success") && (
                         <div className="max-w-sm w-full justify-self-center p-2 px-4 text-emerald-500 border rounded-xl border-emerald-500/50 bg-emerald-500/20">
-                            {msg.success}
+                            {searchParams.get("success")}
                         </div>
                     )}
-                    {"error" in msg! && (
+                    {searchParams.get("error") && (
                         <div className="max-w-sm w-full justify-self-center p-2 px-4 text-rose-500 border rounded-xl border-rose-500/50 bg-rose-500/20">
-                            {msg.error}
+                            {searchParams.get("error")}
                         </div>
                     )}
-                    {"message" in msg! && (
-                        <div className="max-w-sm w-full justify-self-center p-2 px-4 text-indigo-400 border rounded-xl border-indigo-500/50 bg-indigo-500/20">
-                            {msg.message}
+                    {searchParams.get("message") && (
+                        <div className="max-w-sm w-full justify-self-center p-2 px-4 text-indigo-500 border rounded-xl border-indigo-500/50 bg-indigo-500/20">
+                            {searchParams.get("message")}
                         </div>
                     )}
                 </motion.div>
