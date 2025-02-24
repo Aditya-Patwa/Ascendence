@@ -35,7 +35,7 @@ export const signInWithMagicLinkAction = async (formData: FormData) => {
         return encodedRedirect(
           "success",
           "/get-started",
-          "Thanks for signing up! Please check your email for a verification link.",
+          "Thanks! Please check your email for a verification link to continue.",
         );
     }
 };

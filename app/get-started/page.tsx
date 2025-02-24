@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { signInWithMagicLinkAction } from "../actions";
 import { useSearchParams } from 'next/navigation'
-import { Suspense } from "react";
+import { FormEvent, Suspense, useState } from "react";
 
 function SearchParams() {
     const searchParams = useSearchParams();
@@ -34,7 +34,22 @@ function SearchParams() {
     )
 }
 
-export default function GetStarted() { 
+export default function GetStarted() {
+    const [submitted, setSubmitted] = useState(false);
+    const [email, setEmail] = useState("");
+
+    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault()
+        const formData = new FormData(e.currentTarget);
+        setSubmitted(true);
+        signInWithMagicLinkAction(formData).then(() => {
+            setEmail("");
+            setSubmitted(false)
+        }).catch(() => {
+            setEmail("");
+            setSubmitted(false)
+        });
+    }
 
     return (
         <section className="w-screen overflow-x-hidden min-h-screen grid relative px-4 py-24">
@@ -86,11 +101,11 @@ export default function GetStarted() {
                     </Link>
                 </div>
 
-                <form action={signInWithMagicLinkAction} className="px-4 grid gap-2 mt-8 pb-8 gap-2">
+                <form onSubmit={handleSubmit} className="px-4 grid gap-2 mt-8 pb-8 gap-2">
                     <div>
-                        <input type="email" name="email" placeholder="Enter Email" className="bg-transparent border border-zinc-500 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-xl text-base lg:text-md font-light relative overflow-hidden flex gap-2 justify-center items-center w-full outline-none" />
+                        <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter Email" className="bg-transparent border border-zinc-500 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-xl text-base lg:text-md font-light relative overflow-hidden flex gap-2 justify-center items-center w-full outline-none" />
                     </div>
-                    <button type="submit" className="bg-transparent border border-zinc-500 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-xl text-base lg:text-md font-bold relative overflow-hidden flex gap-2 justify-center items-center">
+                    <button type="submit" disabled={submitted} className="bg-transparent border border-zinc-500 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-xl text-base lg:text-md font-bold relative overflow-hidden flex gap-2 justify-center items-center">
                         <div
                             className="pointer-events-none absolute -inset-px opacity-0 transition duration-500"
                             style={{
@@ -98,7 +113,13 @@ export default function GetStarted() {
                                 background: `radial-gradient(600px circle at 50% -50%, rgba(255,255,255,.15), transparent 40%)`,
                             }}
                         />
-                        <div>Continue</div>
+                        {submitted ? (
+                            <div className="border-2 border-white w-4 h-4 rounded-full border-b-transparent animate-spin my-1">
+
+                            </div>
+                        ) : (   
+                            <div>Continue</div>
+                        )}
                     </button>
                     {/* </form> */}
                 </form>
