@@ -39,7 +39,7 @@ export default function Card({icon, title, description}: {icon: ReactElement, ti
 
     return (
         <motion.main
-            initial={{y: 20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: .35, duration: .4, ease: "linear"}}
+            initial={{y: 20, opacity: 0, filter: "blur(4px)"}} whileInView={{y: 0, opacity: 1, filter: "blur(0px)"}} transition={{delay: .15, duration: .5, ease: "easeOut"}}
             ref={divRef}
             onMouseMove={handleMouseMove}
             onFocus={handleFocus}

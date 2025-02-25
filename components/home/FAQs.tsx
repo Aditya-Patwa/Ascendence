@@ -130,7 +130,7 @@ function QnAs() {
 
 export default function FAQs() {
     return (
-        <motion.section initial={{opacity: 0, y: 30}} whileInView={{y: 0, opacity: 1}} transition={{duration: .75}} className="py-8 pt-16 px-4 grid" id="faqs">
+        <motion.section initial={{opacity: 0, y: 30, filter: "blur(4px)"}} whileInView={{y: 0, opacity: 1, filter: "blur(0px)"}} transition={{duration: .5}} className="py-8 pt-16 px-4 grid" id="faqs">
             <div className="max-w-6xl w-full justify-self-center grid gird-cols-1 md:grid-cols-2 gap-12 md:gap-0">
                 <div>
                     <h1 className="text-left text-2xl md:text-3xl font-extrabold">

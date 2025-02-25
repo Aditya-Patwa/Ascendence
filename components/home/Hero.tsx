@@ -40,7 +40,7 @@ export default function Hero() {
             </div>
 
             <div className="grid place-content-center py-4 md:py-8 px-4 md:px-8 md:mt-4 lg:mt-8">
-                <motion.div initial={{opacity: 0, y: 30, filter: "blur(4px)"}} whileInView={{opacity: 1, y: 0, filter: "blur(0px)"}} transition={{duration: 1}} className="max-w-6xl rounded-3xl border-4 md:border-8 border-indigo-600 shadow-3xl overflow-hidden">
+                <motion.div initial={{opacity: 0, y: 30, filter: "blur(4px)"}} whileInView={{opacity: 1, y: 0, filter: "blur(0px)"}} transition={{duration: .5}} className="max-w-6xl rounded-3xl border-4 md:border-8 border-indigo-600 shadow-3xl overflow-hidden">
                     <img src="Grow Your Money.png" />
                 </motion.div>
             </div>
