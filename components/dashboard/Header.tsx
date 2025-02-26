@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 export default function DashboardHeader() {
     return (
         <>
-            <header className="w-screen px-4 py-4 lg:py-4 lg:px-8 border-b dark:border-zinc-800 border-zinc-100 flex justify-between items-center">
+            <header className="w-screen px-4 py-4 lg:py-4 lg:px-8 border-b dark:border-zinc-800 border-zinc-100 flex justify-between items-center bg-white dark:bg-black">
                 <div className="flex gap-4 text-xl md:text-3xl lg:text-4xl font-bold items-center">
                     <button className="h-10 w-10 grid place-content-center bg-light dark:bg-black border border-zinc-200 dark:border-zinc-600 text-black dark:text-white rounded-xl font-bold relative overflow-hidden">
                         <div
@@ -20,7 +20,7 @@ export default function DashboardHeader() {
                     </button>
                     <Logo />
                 </div>
-                <div className="flex gap-2 text-xl">
+                <div className="flex gap-2 text-xl items-center">
                     <ModeToggle />
                     <form action={signOutAction}>
                         <button type="submit" className="bg-transparent border border-zinc-500 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-xl text-sm sm:text-base md:text-lg lg:text-xl font-bold relative overflow-hidden">
