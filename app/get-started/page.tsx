@@ -2,7 +2,7 @@
 import { motion } from "motion/react";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { signInWithMagicLinkAction } from "../actions";
+import { signInActionWithGoogle, signInWithMagicLinkAction } from "../actions";
 import { useSearchParams } from 'next/navigation'
 import { Suspense, useState } from "react";
 
@@ -84,9 +84,9 @@ export default function GetStarted() {
                     </div>
                 </div>
 
-                <div className="px-4 grid gap-2 mt-8 pb-8 border-b border-zinc-200 dark:border-zinc-700 relative">
+                <form action={signInActionWithGoogle} className="px-4 grid gap-2 mt-8 pb-8 border-b border-zinc-200 dark:border-zinc-700 relative">
                     <div className="absolute bottom-0 justify-self-center bg-white dark:bg-black px-2 text-zinc-400 dark:text-zinc-600 translate-y-1/2">or</div>
-                    <Link href={"/"} className="bg-transparent border border-zinc-500 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-xl text-base lg:text-md font-bold relative overflow-hidden flex gap-2 justify-center items-center">
+                    <button type="submit" className="bg-transparent border border-zinc-500 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-xl text-base lg:text-md font-bold relative overflow-hidden flex gap-2 justify-center items-center">
                         <div
                             className="pointer-events-none absolute -inset-px opacity-0 transition duration-500"
                             style={{
@@ -98,8 +98,8 @@ export default function GetStarted() {
                             <img src={"/google.png"} className="w-4" />
                         </div>
                         <div>Continue With Google</div>
-                    </Link>
-                </div>
+                    </button>
+                </form>
 
                 <form onSubmit={handleSubmit} className="px-4 grid gap-2 mt-8 pb-8 gap-2">
                     <div>
