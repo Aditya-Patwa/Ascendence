@@ -1,3 +1,5 @@
+import DashboardHeader from "@/components/dashboard/Header";
+
 export default function DashboardLayout({
     children,
 }: Readonly<{
@@ -5,6 +7,7 @@ export default function DashboardLayout({
 }>) {
     return (
         <main className="w-screen overflow-x-hidden">
+            <DashboardHeader />
             {children}
         </main>
     )
