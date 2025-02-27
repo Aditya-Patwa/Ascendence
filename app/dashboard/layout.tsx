@@ -6,7 +6,7 @@ export default function DashboardLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <main className="w-screen overflow-x-hidden bg-zinc-50 dark:bg-zinc-950 min-h-screen">
+        <main className="w-screen overflow-x-hidden bg-white dark:bg-black min-h-screen">
             <DashboardHeader />
             {children}
         </main>
