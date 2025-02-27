@@ -222,7 +222,7 @@ export default function ProfileNew() {
     
     return (
         <div className="p-4 grid mb-16 mt-8">
-            <div className="justify-self-center max-w-5xl p-4 w-full">
+            <div className="justify-self-center max-w-4xl md:p-4 w-full">
                 <div className="text-2xl font-light mb-4">
                     Complete Your Setup & Watch Your Wealth Ascend!
                 </div>
