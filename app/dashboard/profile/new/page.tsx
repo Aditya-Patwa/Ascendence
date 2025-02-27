@@ -21,7 +21,7 @@ export default function ProfileNew() {
                             100%
                         </h1>
                     </div>
-                    <div className="w-full bg-zinc-200 dark:bg-zinc-900 rounded-full">
+                    <div className="w-full bg-zinc-100 dark:bg-zinc-900 rounded-full">
                         <motion.div initial={{ width: "0%" }} animate={{ width: `${counter * 20}%` }} className="bg-emerald-500 py-1 rounded-full">
                         </motion.div>
                     </div>
