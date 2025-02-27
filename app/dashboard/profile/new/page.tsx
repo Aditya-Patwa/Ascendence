@@ -210,8 +210,16 @@ function ReviewSection() {
 export default function ProfileNew() {
     const [counter, setCounter] = useState(0);
     const [direction, setDirection] = useState(true);
-    const sections = [<ProfileSection />, <GoalSection />, <InvestmentSection />, <MoneyFlowSection />, <PreferencesSection />, <ReviewSection />];
+    const sections = [
+        <ProfileSection key="profile" />,
+        <GoalSection key="goal" />,
+        <InvestmentSection key="investment" />,
+        <MoneyFlowSection key="moneyFlow" />,
+        <PreferencesSection key="preferences" />,
+        <ReviewSection key="review" />
+    ];
 
+    
     return (
         <div className="p-4 grid mb-16 mt-8">
             <div className="justify-self-center max-w-5xl p-4 w-full">
