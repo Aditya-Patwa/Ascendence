@@ -5,7 +5,7 @@ import Link from "next/link";
 import { CircleCheck } from "lucide-react";
 import { motion } from "motion/react";
 
-function Plan({ children }: { children: React.ReactNode }) {
+export function Plan({ children }: { children: React.ReactNode }) {
     const divRef = useRef<HTMLDivElement>(null);
     const [isFocused, setIsFocused] = useState(false);
     const [position, setPosition] = useState({ x: 0, y: 0 });
