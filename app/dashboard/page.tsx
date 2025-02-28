@@ -70,7 +70,7 @@ function Overview() {
                                     <ChevronDown className="size-3 text-white font-bold" />
                                 </div>
                                 <div>
-                                    <h6 className="text-xs font-semibold text-red-500">6.9%</h6>
+                                    <h6 className="text-xs font-semibold text-red-500">1.3%</h6>
                                 </div>
                             </div>
                         </div>
