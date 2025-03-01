@@ -1,7 +1,7 @@
 "use client";
 import { urbanist } from "@/components/fonts";
 import { BaseCard } from "@/components/BaseCard";
-import { ChevronDown } from "lucide-react";
+import { ArrowUpRight, Car, ChevronDown, Gamepad, House, Tv } from "lucide-react";
 import Link from "next/link";
 import { motion } from "motion/react";
 
@@ -9,7 +9,7 @@ function Overview() {
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
             <BaseCard>
-                <motion.div initial={{y: 20, opacity: 0, filter: "blur(4px)"}} whileInView={{y: 0, opacity: 1, filter: "blur(0px)"}} transition={{delay: .15, duration: .5, ease: "easeOut"}} className="p-4 border border-zinc-300 dark:border-zinc-700 rounded-2xl grid gap-8">
+                <motion.div initial={{ y: 20, opacity: 0, filter: "blur(4px)" }} whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }} transition={{ delay: .15, duration: .5, ease: "easeOut" }} className="p-4 border border-zinc-300 dark:border-zinc-700 rounded-2xl grid gap-8">
                     <div>
                         <div className="flex justify-between items-center">
                             <div className="text-lg font-semibold">
@@ -47,7 +47,7 @@ function Overview() {
 
 
             <BaseCard>
-                <motion.div initial={{y: 20, opacity: 0, filter: "blur(4px)"}} whileInView={{y: 0, opacity: 1, filter: "blur(0px)"}} transition={{delay: .15, duration: .5, ease: "easeOut"}} className="p-4 border border-zinc-300 dark:border-zinc-700 rounded-2xl grid gap-8">
+                <motion.div initial={{ y: 20, opacity: 0, filter: "blur(4px)" }} whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }} transition={{ delay: .15, duration: .5, ease: "easeOut" }} className="p-4 border border-zinc-300 dark:border-zinc-700 rounded-2xl grid gap-8">
                     <div>
                         <div className="flex justify-between items-center">
                             <div className="text-lg font-semibold">
@@ -85,7 +85,7 @@ function Overview() {
 
 
             <BaseCard>
-                <motion.div initial={{y: 20, opacity: 0, filter: "blur(4px)"}} whileInView={{y: 0, opacity: 1, filter: "blur(0px)"}} transition={{delay: .15, duration: .5, ease: "easeOut"}} className="p-4 border border-zinc-300 dark:border-zinc-700 rounded-2xl grid gap-8 bg-indigo-500 text-white">
+                <motion.div initial={{ y: 20, opacity: 0, filter: "blur(4px)" }} whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }} transition={{ delay: .15, duration: .5, ease: "easeOut" }} className="p-4 border border-zinc-300 dark:border-zinc-700 rounded-2xl grid gap-8 bg-indigo-500 text-white">
                     <div>
                         <div className="flex justify-between items-center">
                             <div className="text-lg font-semibold">
@@ -125,19 +125,131 @@ function Overview() {
 
 
 
+function ProgressBar() {
+    return (
+        <main className="grid sm:grid-cols-4 gap-4 mt-8">
+            <div className="grid sm:col-span-3 gap-6">
+                <div className="flex justify-between items-center">
+                    <h1 className="text-lg font-bold">Active Savings Goals</h1>
+
+                    <div>
+                        <BaseCard>
+                            <Link href={"/"} className="grid place-content-center w-8 h-8 rounded-full border border-zinc-300 dark:border-zinc-600">
+                               
+                                <span>
+                                    <ArrowUpRight className="w-4 h-4" />
+                                </span>
+                            </Link>
+                        </BaseCard>
+                    </div>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                    <BaseCard>
+                        <div className="rounded-2xl p-4 border border-zinc-300 dark:border-zinc-600 grid gap-1">
+                            <div>
+                                <div className="w-12 h-12 rounded-full grid place-content-center">
+                                    <Car className="w-8 h-8 text-emerald-500" />
+                                </div>
+                            </div>
+                            <div>
+                                <h3 className="text-base font-bold">Dream Car</h3>
+                                <div className="my-1">
+                                    <h5 className="text-xs font-black">
+                                        $30 of $390k
+                                    </h5>
+                                </div>
+                                <div className="w-full bg-zinc-200 dark:bg-zinc-800 rounded-full">
+                                    <div className="py-0.5 w-[40%] bg-emerald-500 rounded-full">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </BaseCard>
+                    <BaseCard>
+                        <div className="rounded-2xl p-4 border border-zinc-300 dark:border-zinc-600 grid gap-1">
+                            <div>
+                                <div className="w-12 h-12 rounded-full grid place-content-center">
+                                    <House className="w-8 h-8 text-indigo-500" />
+                                </div>
+                            </div>
+                            <div>
+                                <h3 className="text-base font-bold">Home Loan</h3>
+                                <div className="my-1">
+                                    <h5 className="text-xs font-black">
+                                        $30 of $390k
+                                    </h5>
+                                </div>
+                                <div className="w-full bg-zinc-200 dark:bg-zinc-800 rounded-full">
+                                    <div className="py-0.5 w-[40%] bg-indigo-500 rounded-full">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </BaseCard>
+                    <BaseCard>
+                        <div className="rounded-2xl p-4 border border-zinc-300 dark:border-zinc-600 grid gap-1">
+                            <div>
+                                <div className="w-12 h-12 rounded-full grid place-content-center">
+                                    <Tv className="w-8 h-8 text-yellow-500" />
+                                </div>
+                            </div>
+                            <div>
+                                <h3 className="text-base font-bold">TV</h3>
+                                <div className="my-1">
+                                    <h5 className="text-xs font-black">
+                                        $30 of $390k
+                                    </h5>
+                                </div>
+                                <div className="w-full bg-zinc-200 dark:bg-zinc-800 rounded-full">
+                                    <div className="py-0.5 w-[40%] bg-yellow-500 rounded-full">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </BaseCard>
+                    <BaseCard>
+                        <div className="rounded-2xl p-4 border border-zinc-300 dark:border-zinc-600 grid gap-1">
+                            <div>
+                                <div className="w-12 h-12 rounded-full grid place-content-center">
+                                    <Gamepad className="w-8 h-8 text-fuchsia-500" />
+                                </div>
+                            </div>
+                            <div>
+                                <h3 className="text-base font-bold">Video Game</h3>
+                                <div className="my-1">
+                                    <h5 className="text-xs font-black">
+                                        $30 of $390k
+                                    </h5>
+                                </div>
+                                <div className="w-full bg-zinc-200 dark:bg-zinc-800 rounded-full">
+                                    <div className="py-0.5 w-[40%] bg-fuchsia-500 rounded-full">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </BaseCard>
+                </div>
+            </div>
+        </main>
+    )
+}
+
+
+
 export default function DashboardHome() {
     return (
         <main className="grid my-8 mb-16">
             <div className="max-w-5xl w-full justify-self-center p-4 grid gap-8">
                 <div className="grid">
-                    <motion.h4 initial={{x: -10, opacity: 0}} whileInView={{x: 0, opacity: 1}} transition={{ease: "easeOut", duration: .45}} className="font-extralight">
+                    <motion.h4 initial={{ x: -10, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ ease: "easeOut", duration: .45 }} className="font-extralight">
                         Welcome back, Aditya
                     </motion.h4>
-                    <motion.h1 initial={{y: 10, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{ease: "easeOut", duration: .45, delay: .25}} className={"text-5xl font-extralight " + urbanist.className}>
+                    <motion.h1 initial={{ y: 10, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration: .45, delay: .25 }} className={"text-5xl font-extralight " + urbanist.className}>
                         Dashboard Overview
                     </motion.h1>
                 </div>
                 <Overview />
+                <ProgressBar />
             </div>
         </main>
     )
