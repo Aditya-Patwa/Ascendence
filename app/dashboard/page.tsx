@@ -1,7 +1,7 @@
 "use client";
 import { urbanist } from "@/components/fonts";
 import { BaseCard } from "@/components/BaseCard";
-import { ArrowUpRight, Car, ChevronDown, Gamepad, House, Tv } from "lucide-react";
+import { ArrowUpRight, Car, ChevronDown, Gamepad, House, Plus, Tv } from "lucide-react";
 import Link from "next/link";
 import { motion } from "motion/react";
 
@@ -128,14 +128,22 @@ function Overview() {
 function ProgressBar() {
     return (
         <main className="grid sm:grid-cols-4 gap-4 mt-8">
-            <div className="grid sm:col-span-3 gap-6">
+            <div className="grid sm:col-span-4 gap-6">
                 <div className="flex justify-between items-center">
                     <h1 className="text-lg font-bold">Active Savings Goals</h1>
 
-                    <div>
+                    <div className="flex gap-2 items-center">
                         <BaseCard>
-                            <Link href={"/"} className="grid place-content-center w-8 h-8 rounded-full border border-zinc-300 dark:border-zinc-600">
-                               
+                            <Link href={"/"} className="flex place-content-center py-2 px-3 gap-1 text-xs rounded-full border border-zinc-300 dark:border-zinc-600">
+                                New
+                                <span>
+                                    <Plus className="w-4 h-4" />
+                                </span>
+                            </Link>
+                        </BaseCard>
+                        <BaseCard>
+                            <Link href={"/"} className="grid place-content-center w-8 h-8 rounded-full border border-zinc-300 dark:border-zinc-600 bg-black dark:bg-white text-white dark:text-black">
+
                                 <span>
                                     <ArrowUpRight className="w-4 h-4" />
                                 </span>
@@ -230,6 +238,16 @@ function ProgressBar() {
                     </BaseCard>
                 </div>
             </div>
+
+            {/* <BaseCard> */}
+            {/* <div className="p-4 rounded-2xl  border-zinc-300 dark:border-zinc-600 h-full grid gap-4">
+                    <div className="flex justify-between">
+                        <h1 className="text-base font-bold">
+                            Daily Finance Tips
+                        </h1> 
+                    </div>
+                </div> */}
+            {/* </BaseCard> */}
         </main>
     )
 }
