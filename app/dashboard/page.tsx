@@ -1,14 +1,15 @@
+"use client";
 import { urbanist } from "@/components/fonts";
-import { Plan } from "@/components/home/Pricing";
+import { BaseCard } from "@/components/BaseCard";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-
+import { motion } from "motion/react";
 
 function Overview() {
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-            <Plan>
-                <div className="p-4 border border-zinc-300 dark:border-zinc-700 rounded-2xl grid gap-8">
+            <BaseCard>
+                <motion.div initial={{y: 20, opacity: 0, filter: "blur(4px)"}} whileInView={{y: 0, opacity: 1, filter: "blur(0px)"}} transition={{delay: .15, duration: .5, ease: "easeOut"}} className="p-4 border border-zinc-300 dark:border-zinc-700 rounded-2xl grid gap-8">
                     <div>
                         <div className="flex justify-between items-center">
                             <div className="text-lg font-semibold">
@@ -40,13 +41,13 @@ function Overview() {
                             <h5 className="text-xs font-extralight text-zinc-500 dark:text-zinc-400">This month (March 2025)</h5>
                         </div>
                     </div>
-                </div>
-            </Plan>
+                </motion.div>
+            </BaseCard>
 
 
 
-            <Plan>
-                <div className="p-4 border border-zinc-300 dark:border-zinc-700 rounded-2xl grid gap-8">
+            <BaseCard>
+                <motion.div initial={{y: 20, opacity: 0, filter: "blur(4px)"}} whileInView={{y: 0, opacity: 1, filter: "blur(0px)"}} transition={{delay: .15, duration: .5, ease: "easeOut"}} className="p-4 border border-zinc-300 dark:border-zinc-700 rounded-2xl grid gap-8">
                     <div>
                         <div className="flex justify-between items-center">
                             <div className="text-lg font-semibold">
@@ -78,13 +79,13 @@ function Overview() {
                             <h5 className="text-xs font-extralight text-zinc-500 dark:text-zinc-400">This month (March 2025)</h5>
                         </div>
                     </div>
-                </div>
-            </Plan>
+                </motion.div>
+            </BaseCard>
 
 
 
-            <Plan>
-                <div className="p-4 border border-zinc-300 dark:border-zinc-700 rounded-2xl grid gap-8 bg-indigo-500 text-white">
+            <BaseCard>
+                <motion.div initial={{y: 20, opacity: 0, filter: "blur(4px)"}} whileInView={{y: 0, opacity: 1, filter: "blur(0px)"}} transition={{delay: .15, duration: .5, ease: "easeOut"}} className="p-4 border border-zinc-300 dark:border-zinc-700 rounded-2xl grid gap-8 bg-indigo-500 text-white">
                     <div>
                         <div className="flex justify-between items-center">
                             <div className="text-lg font-semibold">
@@ -116,8 +117,8 @@ function Overview() {
                             <h5 className="text-xs font-extralight text-zinc-50">This month (March 2025)</h5>
                         </div>
                     </div>
-                </div>
-            </Plan>
+                </motion.div>
+            </BaseCard>
         </div>
     )
 }
@@ -129,12 +130,12 @@ export default function DashboardHome() {
         <main className="grid my-8 mb-16">
             <div className="max-w-5xl w-full justify-self-center p-4 grid gap-8">
                 <div className="grid">
-                    <h4 className="font-extralight">
+                    <motion.h4 initial={{x: -10, opacity: 0}} whileInView={{x: 0, opacity: 1}} transition={{ease: "easeOut", duration: .45}} className="font-extralight">
                         Welcome back, Aditya
-                    </h4>
-                    <h1 className={"text-5xl font-extralight " + urbanist.className}>
+                    </motion.h4>
+                    <motion.h1 initial={{y: 10, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{ease: "easeOut", duration: .45, delay: .25}} className={"text-5xl font-extralight " + urbanist.className}>
                         Dashboard Overview
-                    </h1>
+                    </motion.h1>
                 </div>
                 <Overview />
             </div>
