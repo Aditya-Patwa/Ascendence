@@ -1,9 +1,11 @@
 "use client";
+import { createClient } from "@/utils/supabase/client";
 import { AnimatePresence, motion } from "motion/react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 
-function ProfileSection() {
+function ProfileSection({profile, setProfile}:{profile: any, setProfile: any}) {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -20,21 +22,21 @@ function ProfileSection() {
                     <label className="text-sm font-bold ml-2">
                         What should we call you?
                     </label>
-                    <input type="text" placeholder='e.g., "Captain Cashflow," "Byte Banker"' className="bg-transparent border border-zinc-300 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-xl text-sm lg:text-md font-light relative overflow-hidden flex gap-2 justify-center items-center w-full outline-none" />
+                    <input type="text" placeholder='e.g., "Captain Cashflow," "Byte Banker"' value={profile.title} onChange={(e) => setProfile({...profile, title: e.target.value})} className="bg-transparent border border-zinc-300 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-xl text-sm lg:text-md font-light relative overflow-hidden flex gap-2 justify-center items-center w-full outline-none" />
                 </div>
 
                 <div className="grid gap-1">
                     <label className="text-sm font-bold ml-2">
                         I am a...
                     </label>
-                    <input type="text" placeholder='e.g., "Captain Cashflow," "Byte Banker"' className="bg-transparent border border-zinc-300 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-xl text-sm lg:text-md font-light relative overflow-hidden flex gap-2 justify-center items-center w-full outline-none" />
+                    <input type="text" placeholder='e.g., "Captain Cashflow," "Byte Banker"' value={profile.designation} onChange={(e) => setProfile({...profile, designation: e.target.value })} className="bg-transparent border border-zinc-300 dark:border-zinc-600 text-black dark:text-white px-4 text-nowrap py-2 rounded-xl text-sm lg:text-md font-light relative overflow-hidden flex gap-2 justify-center items-center w-full outline-none" />
                 </div>
             </div>
         </div>
     )
 }
 
-function GoalSection() {
+function GoalSection({profile, setProfile}:{profile: any, setProfile: any}) {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -73,7 +75,7 @@ function GoalSection() {
 }
 
 
-function InvestmentSection() {
+function InvestmentSection({profile, setProfile}:{profile: any, setProfile: any}) {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -112,7 +114,7 @@ function InvestmentSection() {
 }
 
 
-function MoneyFlowSection() {
+function MoneyFlowSection({profile, setProfile}:{profile: any, setProfile: any}) {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -151,7 +153,7 @@ function MoneyFlowSection() {
 }
 
 
-function PreferencesSection() {
+function PreferencesSection({profile, setProfile}:{profile: any, setProfile: any}) {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -182,7 +184,7 @@ function PreferencesSection() {
     )
 }
 
-function ReviewSection() {
+function ReviewSection({profile, setProfile}:{profile: any, setProfile: any}) {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -195,11 +197,11 @@ function ReviewSection() {
             </div>
 
             <div className="grid gap-12 mt-8">
-                <ProfileSection />
-                <GoalSection />
-                <InvestmentSection />
-                <MoneyFlowSection />
-                <PreferencesSection />
+                <ProfileSection profile={profile} setProfile={setProfile} />
+                <GoalSection profile={profile} setProfile={setProfile} />
+                <InvestmentSection profile={profile} setProfile={setProfile} />
+                <MoneyFlowSection profile={profile} setProfile={setProfile} />
+                <PreferencesSection profile={profile} setProfile={setProfile} />
             </div>
         </div>
     )
@@ -208,16 +210,31 @@ function ReviewSection() {
 
 
 export default function ProfileNew() {
+    const router = useRouter();
+    const [profile, setProfile] = useState({title: "", designation: "", currency: "USD", preferred_investment_type: [], investment_frequency: "", monthly_income_range: [], expense_tracking_preferences: [], monthly_budget_limit: 0, smart_alerts: [], preferred_mode_insights: [] })
     const [counter, setCounter] = useState(0);
     const [direction, setDirection] = useState(true);
     const sections = [
-        <ProfileSection key="profile" />,
-        <GoalSection key="goal" />,
-        <InvestmentSection key="investment" />,
-        <MoneyFlowSection key="moneyFlow" />,
-        <PreferencesSection key="preferences" />,
-        <ReviewSection key="review" />
+        <ProfileSection key="profile" profile={profile} setProfile={setProfile} />,
+        <GoalSection key="goal" profile={profile} setProfile={setProfile} />,
+        <InvestmentSection key="investment" profile={profile} setProfile={setProfile} />,
+        <MoneyFlowSection key="moneyFlow" profile={profile} setProfile={setProfile} />,
+        <PreferencesSection key="preferences" profile={profile} setProfile={setProfile} />,
+        <ReviewSection key="review" profile={profile} setProfile={setProfile} />
     ];
+
+    async function handleSubmit() {
+        try {
+            const supabase = createClient();
+            const {data: user} = await supabase.auth.getUser();
+            await supabase.from("profiles").insert({id: user.user!.id, ...profile}).select();
+
+            console.log("Successfully Created Profile");
+            router.push("/dashboard");
+        } catch(e) {
+            console.log("Unable to Create Profile");
+        }
+    }
 
     
     return (
@@ -277,7 +294,7 @@ export default function ProfileNew() {
                         </button>
                     )}
                     {counter == 5 && (
-                        <button className="bg-black dark:bg-white border border-zinc-500 dark:border-zinc-600 text-white dark:text-black px-4 text-nowrap py-2 rounded-xl text-base lg:text-md font-bold relative overflow-hidden flex gap-2 justify-center items-center">
+                        <button className="bg-black dark:bg-white border border-zinc-500 dark:border-zinc-600 text-white dark:text-black px-4 text-nowrap py-2 rounded-xl text-base lg:text-md font-bold relative overflow-hidden flex gap-2 justify-center items-center" onClick={handleSubmit}>
                             <div
                                 className="pointer-events-none absolute -inset-px opacity-0 transition duration-500"
                                 style={{
