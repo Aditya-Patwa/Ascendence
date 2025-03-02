@@ -254,7 +254,7 @@ export default function ProfileNew() {
             console.log("Successfully Created Profile");
             router.push("/dashboard");
         } catch(e) {
-            console.log("Unable to Create Profile");
+            console.log("Unable to Create Profile: ", e);
         }
     }
 
