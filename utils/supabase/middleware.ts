@@ -52,6 +52,26 @@ export const updateSession = async (request: NextRequest) => {
       return NextResponse.redirect(new URL("/dashboard", request.url));
     }
 
+    if (user.data.user) {
+      const { data: profile, error: profileError } = await supabase
+        .from("profiles")
+        .select("id")
+        .eq("id", user.data.user.id)
+        .single();
+  
+      // If user has no profile, redirect them to create one
+      if (!profile) {
+        if (request.nextUrl.pathname.startsWith("/dashboard") && request.nextUrl.pathname !== "/dashboard/profile/new") {
+          return NextResponse.redirect(new URL("/dashboard/profile/new", request.url));
+        }
+      } else {
+        // If user already has a profile and tries to access "/dashboard/profile/new", redirect them to dashboard
+        if (request.nextUrl.pathname === "/dashboard/profile/new") {
+          return NextResponse.redirect(new URL("/dashboard", request.url));
+        }
+      }
+    }
+
     return response;
   } catch (e) {
     // If you are here, a Supabase client could not be created!

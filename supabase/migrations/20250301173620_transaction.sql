@@ -1,6 +1,6 @@
 create table transactions (
     id uuid primary key default gen_random_uuid(),
-    user_profile uuid not null references public.profiles (id) default auth.uid() on delete cascade,
+    user_profile uuid not null default auth.uid() references public.profiles (id) on delete cascade,
     category text not null,
     amount numeric not null,
     transaction_type text check (transaction_type in ('Expense', 'Income')) not null,
