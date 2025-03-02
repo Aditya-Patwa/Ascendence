@@ -2,10 +2,32 @@
 import { createClient } from "@/utils/supabase/client";
 import { AnimatePresence, motion } from "motion/react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
+
+interface Profile {
+    title: string, designation: string, currency: string, preferred_investment_type: string[], investment_frequency: string, monthly_income_range: number[], expense_tracking_preferences: string[], monthly_budget_limit: number, smart_alerts: string[], preferred_mode_insights: string[]
+};
 
 
-function ProfileSection({profile, setProfile}:{profile: any, setProfile: any}) {
+interface profileInterface { 
+    profile: Profile,
+    setProfile: Dispatch<SetStateAction<{
+        title: string;
+        designation: string;
+        currency: string;
+        preferred_investment_type: string[];
+        investment_frequency: string;
+        monthly_income_range: number[];
+        expense_tracking_preferences: string[];
+        monthly_budget_limit: number;
+        smart_alerts: string[];
+        preferred_mode_insights: string[];
+    }>>
+}
+
+
+
+function ProfileSection({profile, setProfile}:profileInterface) {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -36,7 +58,7 @@ function ProfileSection({profile, setProfile}:{profile: any, setProfile: any}) {
     )
 }
 
-function GoalSection({profile, setProfile}:{profile: any, setProfile: any}) {
+function GoalSection({profile, setProfile}:profileInterface) {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -75,7 +97,7 @@ function GoalSection({profile, setProfile}:{profile: any, setProfile: any}) {
 }
 
 
-function InvestmentSection({profile, setProfile}:{profile: any, setProfile: any}) {
+function InvestmentSection({profile, setProfile}:profileInterface) {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -114,7 +136,7 @@ function InvestmentSection({profile, setProfile}:{profile: any, setProfile: any}
 }
 
 
-function MoneyFlowSection({profile, setProfile}:{profile: any, setProfile: any}) {
+function MoneyFlowSection({profile, setProfile}:profileInterface) {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -153,7 +175,7 @@ function MoneyFlowSection({profile, setProfile}:{profile: any, setProfile: any})
 }
 
 
-function PreferencesSection({profile, setProfile}:{profile: any, setProfile: any}) {
+function PreferencesSection({profile, setProfile}:profileInterface) {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -184,7 +206,7 @@ function PreferencesSection({profile, setProfile}:{profile: any, setProfile: any
     )
 }
 
-function ReviewSection({profile, setProfile}:{profile: any, setProfile: any}) {
+function ReviewSection({profile, setProfile}:profileInterface) {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -211,7 +233,7 @@ function ReviewSection({profile, setProfile}:{profile: any, setProfile: any}) {
 
 export default function ProfileNew() {
     const router = useRouter();
-    const [profile, setProfile] = useState({title: "", designation: "", currency: "USD", preferred_investment_type: [], investment_frequency: "", monthly_income_range: [], expense_tracking_preferences: [], monthly_budget_limit: 0, smart_alerts: [], preferred_mode_insights: [] })
+    const [profile, setProfile] = useState<Profile>({title: "", designation: "", currency: "USD", preferred_investment_type: [], investment_frequency: "", monthly_income_range: [], expense_tracking_preferences: [], monthly_budget_limit: 0, smart_alerts: [], preferred_mode_insights: [] })
     const [counter, setCounter] = useState(0);
     const [direction, setDirection] = useState(true);
     const sections = [
