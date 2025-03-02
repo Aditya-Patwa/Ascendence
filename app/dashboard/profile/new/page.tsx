@@ -58,7 +58,7 @@ function ProfileSection({profile, setProfile}:profileInterface) {
     )
 }
 
-function GoalSection({profile, setProfile}:profileInterface) {
+function GoalSection() {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -97,7 +97,7 @@ function GoalSection({profile, setProfile}:profileInterface) {
 }
 
 
-function InvestmentSection({profile, setProfile}:profileInterface) {
+function InvestmentSection() {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -136,7 +136,7 @@ function InvestmentSection({profile, setProfile}:profileInterface) {
 }
 
 
-function MoneyFlowSection({profile, setProfile}:profileInterface) {
+function MoneyFlowSection() {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -175,7 +175,7 @@ function MoneyFlowSection({profile, setProfile}:profileInterface) {
 }
 
 
-function PreferencesSection({profile, setProfile}:profileInterface) {
+function PreferencesSection() {
     return (
         <div className="grid gap-6">
             <div className="grid gap-1">
@@ -220,10 +220,10 @@ function ReviewSection({profile, setProfile}:profileInterface) {
 
             <div className="grid gap-12 mt-8">
                 <ProfileSection profile={profile} setProfile={setProfile} />
-                <GoalSection profile={profile} setProfile={setProfile} />
-                <InvestmentSection profile={profile} setProfile={setProfile} />
-                <MoneyFlowSection profile={profile} setProfile={setProfile} />
-                <PreferencesSection profile={profile} setProfile={setProfile} />
+                <GoalSection />
+                <InvestmentSection />
+                <MoneyFlowSection />
+                <PreferencesSection />
             </div>
         </div>
     )
@@ -238,10 +238,10 @@ export default function ProfileNew() {
     const [direction, setDirection] = useState(true);
     const sections = [
         <ProfileSection key="profile" profile={profile} setProfile={setProfile} />,
-        <GoalSection key="goal" profile={profile} setProfile={setProfile} />,
-        <InvestmentSection key="investment" profile={profile} setProfile={setProfile} />,
-        <MoneyFlowSection key="moneyFlow" profile={profile} setProfile={setProfile} />,
-        <PreferencesSection key="preferences" profile={profile} setProfile={setProfile} />,
+        <GoalSection key="goal" />,
+        <InvestmentSection key="investment" />,
+        <MoneyFlowSection key="moneyFlow" />,
+        <PreferencesSection key="preferences" />,
         <ReviewSection key="review" profile={profile} setProfile={setProfile} />
     ];
 
