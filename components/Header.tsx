@@ -12,7 +12,7 @@ export default function Header() {
 
     return (
         <>
-            <motion.header initial={{y: -5, opacity: 0}} animate={{opacity: 1, y: 0}} transition={{duration: .35}} className={`w-screen px-6 py-6 lg:py-8 lg:px-8 flex justify-between items-center bg-white dark:bg-black gap-8`}>
+            <motion.header initial={{ y: -5, opacity: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .35 }} className={`w-screen px-6 py-6 lg:py-8 lg:px-8 flex justify-between items-center bg-white dark:bg-black gap-8`}>
                 <div>
                     <Link href={"/"} className={`${urbanist.className} text-black dark:text-white font-bold bg-clip-text items-center flex gap-0 font-bolder text-3xl lg:text-4xl`}>
                         <Logo />
@@ -20,19 +20,22 @@ export default function Header() {
                 </div>
 
                 <div className="hidden md:flex justify-around items-center gap-3 lg:gap-6">
-                    <Link href={"#products"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-lg lg:text-2xl dark:hover:text-white">
+                    <Link href={"https://ascead-kbqz4v6eyw2rso8nkb2qvz.streamlit.app/"} target="_blank" className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-base lg:text-lg dark:hover:text-white">
+                        Ascendence Advisory
+                    </Link>
+                    <Link href={"#products"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-base lg:text-lg dark:hover:text-white">
                         Products
                     </Link>
-                    <Link href={"#about"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-lg lg:text-2xl dark:hover:text-white">
+                    <Link href={"#about"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-base lg:text-lg dark:hover:text-white">
                         About
                     </Link>
-                    <Link href={"#pricing"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-lg lg:text-2xl dark:hover:text-white">
+                    <Link href={"#pricing"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-base lg:text-lg dark:hover:text-white">
                         Pricing
                     </Link>
-                    <Link href={"#faqs"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-lg lg:text-2xl dark:hover:text-white">
+                    <Link href={"#faqs"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-base lg:text-lg dark:hover:text-white">
                         FAQs
                     </Link>
-                    <Link href={"/"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-lg lg:text-2xl dark:hover:text-white">
+                    <Link href={"/"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-base lg:text-lg dark:hover:text-white">
                         Feedback
                     </Link>
                 </div>
@@ -75,6 +78,11 @@ export default function Header() {
                 {toggle && (
                     <motion.nav initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="px-4 absolute w-screen z-20">
                         <div className="py-2 pt-4 bg-white dark:bg-black rounded-xl border border-zinc-300 dark:border-zinc-800 grid gap-2">
+                            <div className="text-center">
+                                <Link href={"https://ascead-kbqz4v6eyw2rso8nkb2qvz.streamlit.app/"} target="_blank" className="font-bold text-lg">
+                                    Ascendence Advisory
+                                </Link>
+                            </div>
                             <div className="text-center">
                                 <Link href={"#products"} className="font-bold text-lg">
                                     Products

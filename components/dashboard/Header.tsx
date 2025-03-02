@@ -76,6 +76,11 @@ export default function DashboardHeader() {
                                     </Link>
                                 </motion.div>
                                 <motion.div initial={{ x: -8, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ ease: "linear", duration: .25, delay: .9 }} className="text-lg font-bold">
+                                    <Link href={"https://ascead-kbqz4v6eyw2rso8nkb2qvz.streamlit.app/"} target="_blank">
+                                        Ascendence Advisory
+                                    </Link>
+                                </motion.div>
+                                <motion.div initial={{ x: -8, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ ease: "linear", duration: .25, delay: .9 }} className="text-lg font-bold">
                                     <Link href={"/"}>
                                         Profile
                                     </Link>
