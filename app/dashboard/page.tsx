@@ -4,6 +4,8 @@ import { BaseCard } from "@/components/BaseCard";
 import { ArrowUpRight, Car, ChevronDown, Gamepad, House, Plus, Tv } from "lucide-react";
 import Link from "next/link";
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
+import { createClient } from "@/utils/supabase/client";
 
 function Overview() {
     return (
@@ -255,12 +257,31 @@ function ProgressBar() {
 
 
 export default function DashboardHome() {
+    const [profile, setProfile] = useState<any>();
+
+    async function  fetchProfile() {
+        try {
+            const supabase = createClient();
+            const {data} = await supabase.auth.getUser();
+
+            const profileData = await supabase.from("profiles").select("*").eq("id", data.user!.id).single();
+            setProfile(profileData.data);
+
+        } catch (e) {
+            console.log("Error Occured While Fetching Profile: ", e);
+        }
+    }
+
+    useEffect(() => {
+        fetchProfile();
+    }, []);
+
     return (
         <main className="grid my-8 mb-16">
             <div className="max-w-5xl w-full justify-self-center p-4 grid gap-8">
                 <div className="grid">
                     <motion.h4 initial={{ x: -10, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ ease: "easeOut", duration: .45 }} className="font-extralight">
-                        Welcome back, Aditya
+                        Welcome back, {profile?.title}
                     </motion.h4>
                     <motion.h1 initial={{ y: 10, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ ease: "easeOut", duration: .45, delay: .25 }} className={"text-5xl font-extralight " + urbanist.className}>
                         Dashboard Overview
