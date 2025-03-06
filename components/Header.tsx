@@ -20,7 +20,7 @@ export default function Header() {
                 </div>
 
                 <div className="hidden md:flex justify-around items-center gap-3 lg:gap-6">
-                    <Link href={"https://ascead-kbqz4v6eyw2rso8nkb2qvz.streamlit.app/"} target="_blank" className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-base lg:text-lg dark:hover:text-white">
+                    <Link href={"https://ascendence.streamlit.app/"} target="_blank" className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-base lg:text-lg dark:hover:text-white">
                         Ascendence Advisory
                     </Link>
                     <Link href={"#products"} className="text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 text-base lg:text-lg dark:hover:text-white">
@@ -79,7 +79,7 @@ export default function Header() {
                     <motion.nav initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="px-4 absolute w-screen z-20">
                         <div className="py-2 pt-4 bg-white dark:bg-black rounded-xl border border-zinc-300 dark:border-zinc-800 grid gap-2">
                             <div className="text-center">
-                                <Link href={"https://ascead-kbqz4v6eyw2rso8nkb2qvz.streamlit.app/"} target="_blank" className="font-bold text-lg">
+                                <Link href={"https://ascendence.streamlit.app/"} target="_blank" className="font-bold text-lg">
                                     Ascendence Advisory
                                 </Link>
                             </div>
