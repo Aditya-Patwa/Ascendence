@@ -257,7 +257,6 @@ function ProgressBar() {
 
 
 export default function DashboardHome() {
-    // @ts-ignore
     const [profile, setProfile] = useState<any>();
 
     async function  fetchProfile() {
