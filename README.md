@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <img src="https://ascendence.vercel.app/icon.png" alt="Ascendence Logo" width="100">
+  <h1>Ascendence</h1>
+</div>
 
-## Getting Started
+---
 
-First, run the development server:
+> **Your Smart Financial Companion.**  
+> Budget, invest, and track your money with AI-powered insights.  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Ascendence is an **AI-driven financial management platform** that helps individuals, families, and businesses **optimize their finances** through intelligent tracking, personalized investment strategies, and automated goal-based budgeting.  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🌍 **Website:** [Ascendence](https://ascendence.vercel.app/)  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![Ascendence Frame](https://ascendence.vercel.app/AscendenceFrame.png)
 
-## Learn More
+---
+ 
+## 🚀 **Why Choose Ascendence?**  
 
-To learn more about Next.js, take a look at the following resources:
+💰 **Smart Budgeting** – Automatically categorize expenses and set spending limits.  
+📊 **Goal-Based Investing** – Define & track financial goals with real-time insights.  
+🤖 **AI-Powered Advisory** – Get personalized savings & investment recommendations.  
+📈 **Market Insights** – Stay ahead with crypto & stock analytics.  
+🔔 **Automated Alerts** – Receive timely reminders for bills, investments & savings.  
+🔒 **Secure & Private** – Powered by **Supabase & Next.js** for best-in-class security.  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔧 **How Ascendence Works**  
 
-## Deploy on Vercel
+1️⃣ **Create Your Profile** – Set up financial goals and spending habits.  
+2️⃣ **Link Your Accounts** – Connect your bank, crypto wallets, and investments.  
+3️⃣ **Track & Optimize** – Get detailed insights into income & spending.  
+4️⃣ **Receive AI Recommendations** – Improve your savings & investments.  
+5️⃣ **Achieve Financial Freedom** – Monitor progress and refine strategies.  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎯 **Key Features**  
+
+### 🔹 **1. Smart Budgeting & Expense Tracking**  
+✔️ Track spending in real-time.  
+✔️ Get AI-generated insights on savings opportunities.  
+
+### 🔹 **2. Goal-Based Investment Planning**  
+✔️ Set financial goals and auto-allocate funds.  
+✔️ Track progress and adjust strategies dynamically.  
+
+### 🔹 **3. AI-Powered Financial Advisor**  
+✔️ Personalized insights tailored to your income & goals.  
+✔️ Real-time suggestions to optimize savings and investments.  
+
+### 🔹 **4. Market Insights & Alerts**  
+✔️ Live stock & crypto price tracking.  
+✔️ Get AI-driven investment signals & portfolio updates.  
+
+### 🔹 **5. Automated Reminders & Notifications**  
+✔️ Never miss a bill or investment opportunity.  
+✔️ Timely alerts for spending limits and savings targets.  
+
+---
+
+## 🌐 **Learn More**  
+
+🚀 **Try It Now:** [Ascendence](https://ascendence.vercel.app/)   
+
+--- 
+
+🚀 **Take control of your finances with Ascendence today!**
