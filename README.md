@@ -66,6 +66,7 @@ Ascendence is an **AI-driven financial management platform** that helps individu
 ## 🌐 **Learn More**  
 
 🚀 **Try It Now:** [Ascendence](https://ascendence.vercel.app/)   
+📽️ **Learn More:** [Learn More](https://youtu.be/-WRreOosTi4)
 
 --- 
 
